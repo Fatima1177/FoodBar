@@ -1,79 +1,85 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import logo from "../assets/logo.png";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
+function Navbar() {
+  // Состояние для открытия/закрытия бокового меню на мобильных экранах
   const [open, setOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setOpen(!open);
-  };
+  const toggleMenu = () => setOpen(!open);
+
+  // Базовые классы для ссылки: относительное позиционирование + нижний отступ под линию
+  const navItemClass = "relative pb-2 transition-all duration-300";
+
+  // Функция, возвращающая разметку для ссылки с анимированной линией
+  const renderNavLink = (to, label, onClick) => (
+    <NavLink
+      to={to}
+      onClick={onClick}
+      className={() => `${navItemClass} text-white`} // Текст всегда белый
+    >
+      {({ isActive }) => (
+        <>
+          {label}
+          <span className={`absolute bottom-0 left-0 h-0.5 bg-[#dc3545] transition-all duration-300 ${isActive ? "w-full" : "w-0"}`}></span>
+        </>
+      )}
+    </NavLink>
+  );
 
   return (
-    <header className="bg-white shadow relative z-50 ">
-      {/* Основной контейнер навбара */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-9 lg:px-8 ">
-        <div className="flex items-center justify-between m-9 h-30">
-          {/* Лого */}
-          <div className="flex-shrink-0">
-            <Link to="/" className="font-bold text-gray-800">
-              The Bakary 
-            </Link>
+    <header className="relative bg-[#04091e] shadow">
+      {/* Шапка сайта */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Логотип/Название */}
+          <div className="flex-shrink-0 text-xl font-bold text-white">
+            My Bakery
           </div>
 
-          {/* Горизонтальное меню (большие экраны) */}
+          {/* Горизонтальное меню (отображается на экранах >= sm) */}
           <nav className="hidden sm:flex space-x-6">
-            <Link to="/" className="text-gray-800 hover:text-gray-600 transition-colors duration-200">
-              Home
-            </Link>
-            <Link to="/menu" className="text-gray-800 hover:text-gray-600 transition-colors duration-200">
-              Menu
-            </Link>
-            <Link to="/about" className="text-gray-800 hover:text-gray-600 transition-colors duration-200">
-              About
-            </Link>
-            <Link to="/contact" className="text-gray-800 hover:text-gray-600 transition-colors duration-200">
-              Contact
-            </Link>
+            {renderNavLink("/", "Home")}
+            {renderNavLink("/menu", "Menu")}
+            {renderNavLink("/about", "About")}
+            {renderNavLink("/contact", "Contact")}
           </nav>
 
-          {/* Кнопка-бургер (мобильные экраны) */}
+          {/* Кнопка "гамбургер" (отображается на экранах < sm) */}
           <div className="sm:hidden">
             <button
               onClick={toggleMenu}
-              type="button"
-              className="p-2 text-gray-800 hover:text-gray-600 focus:outline-none transform hover:scale-110 transition-transform duration-300"
+              className="p-2 text-white hover:text-gray-300 focus:outline-none"
             >
               {open ? (
-                // Иконка "Закрыть" (крестик)
+                // Иконка "крестик"
                 <svg
                   className="h-6 w-6"
                   fill="none"
                   stroke="currentColor"
+                  strokeWidth="2"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth="2" 
-                    d="M6 18L18 6M6 6l12 12" 
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
               ) : (
-                // Иконка "Открыть" (три полоски)
+                // Иконка "гамбургер" (три полоски)
                 <svg
                   className="h-6 w-6"
                   fill="none"
                   stroke="currentColor"
+                  strokeWidth="2"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth="2" 
-                    d="M4 6h16M4 12h16M4 18h16" 
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"
                   />
                 </svg>
               )}
@@ -82,53 +88,48 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Оверлей, затемняющий страницу при открытом меню (только на мобильных) */}
+      {/* Оверлей (затемняет контент) при открытом мобильном меню */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300
-                    ${open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'} sm:hidden`}
-        onClick={() => setOpen(false)} // Закрываем меню при клике на оверлей
+        className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 
+          ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} 
+          sm:hidden`}
+        onClick={() => setOpen(false)}
       />
 
-      {/* Боковое меню (мобильная версия) */}
-      <div
-        className={`fixed top-0 right-0 h-full w-64
-                    bg-gradient-to-b from-white via-gray-50 to-white shadow-xl
-                    transform transition-transform duration-300
-                    ${open ? 'translate-x-0' : 'translate-x-full'} sm:hidden z-50`}
+      {/* Боковое (вертикальное) мобильное меню */}
+      <aside
+        className={`fixed top-0 right-0 h-full w-64 bg-black shadow-xl 
+          transform transition-transform duration-300 
+          ${open ? "translate-x-0" : "translate-x-full"} 
+          sm:hidden z-50`}
       >
-        <div className="flex flex-col mt-16 p-4 space-y-4">
-          <Link
-            to="/"
-            className="text-gray-800 hover:text-gray-600 transition-colors duration-200"
-            onClick={() => setOpen(false)}
+        {/* Кнопка-крестик внутри меню (закрывает меню) */}
+        <button
+          onClick={() => setOpen(false)}
+          className="absolute top-4 right-4 text-white hover:text-gray-300 focus:outline-none"
+        >
+          <svg
+            className="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Home
-          </Link>
-          <Link
-            to="/menu"
-            className="text-gray-800 hover:text-gray-600 transition-colors duration-200"
-            onClick={() => setOpen(false)}
-          >
-            Menu
-          </Link>
-          <Link
-            to="/about"
-            className="text-gray-800 hover:text-gray-600 transition-colors duration-200"
-            onClick={() => setOpen(false)}
-          >
-            About
-          </Link>
-          <Link
-            to="/contact"
-            className="text-gray-800 hover:text-gray-600 transition-colors duration-200"
-            onClick={() => setOpen(false)}
-          >
-            Contact
-          </Link>
-        </div>
-      </div>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        {/* Вертикальный список ссылок в боковом меню */}
+        <nav className="flex flex-col mt-16 p-4 space-y-4 text-white">
+          {renderNavLink("/", "Home", () => setOpen(false))}
+          {renderNavLink("/menu", "Menu", () => setOpen(false))}
+          {renderNavLink("/about", "About", () => setOpen(false))}
+          {renderNavLink("/contact", "Contact", () => setOpen(false))}
+        </nav>
+      </aside>
     </header>
   );
-};
+}
 
 export default Navbar;
