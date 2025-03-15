@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from '../components/NavBar.jsx'
+import Navbar from '../components/Navbar.jsx'
 import Footer from '../components/Footer'
 import AboutSec from '../components/AboutSec'
 import TestimonialSec from '../components/TestimonialSec'
@@ -8,7 +8,7 @@ import TestimonialSec from '../components/TestimonialSec'
 const AboutPage = () => {
   return (
     <div>
-      <NavBar/>
+      <Navbar/>
       <AboutSec/>
       <TestimonialSec/>
       <Footer/>

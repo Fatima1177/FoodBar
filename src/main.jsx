@@ -6,5 +6,5 @@ import { routes } from './routes';
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <><RouterProvider router={routes} /></>
+    <RouterProvider router={routes} />
 )

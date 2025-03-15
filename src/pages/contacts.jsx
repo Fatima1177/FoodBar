@@ -1,12 +1,12 @@
 import React from "react";
-import NavBar from "../components/NavBar.jsx";
+import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer";
 import Contact from "../components/Contact";
 
 const ContactPage = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <NavBar/>
+      <Navbar/>
       <Contact/>
 
       <Footer/>
