@@ -1,12 +1,19 @@
-import React from 'react'
-import Navbar from '../components/navBar'
+import React from "react";
+import Navbar from "../components/navBar";
+import Footer from "../components/Footer";
+import Contact from "../components/Contact";
 
 const ContactPage = () => {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <Navbar/>
-    </div>
-  )
-}
+      <Contact/>
 
-export default ContactPage
+      
+
+      <Footer/>
+    </div>
+  );
+};
+
+export default ContactPage;

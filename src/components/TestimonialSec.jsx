@@ -1,84 +1,28 @@
-import React from 'react'
-import avatar from '../assets/testimonials/avatar.png'
+import React from "react";
+import testimonials from "../data/testimonial";
 
 const TestimonialSec = () => {
   return (
-    <section class="py-12 bg-gray-100">
-      <div class="container mx-auto px-4">
-
-        <div class="flex flex-col md:flex-row items-center gap-8">
-          <div class="w-full md:w-1/3 flex justify-center">
-            <img src={avatar} class="w-64 h-auto object-cover rounded-md shadow" />
-          </div>
-
-          <div class="w-full md:w-2/3 text-gray-700">
-            <h3 class="text-xl font-bold text-gray-800 mb-1">
-              Filipino Gomez
-            </h3>
-            <p class="text-sm text-gray-500 mb-4">
-              Web Developer, Google
-            </p>
-            <p class="leading-relaxed line-clamp-4 max-w-[550px]">
-              "Who are in extremely love with eco friendly system. Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-              ex ea commodo consequat."
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row items-center gap-8">
-          <div class="w-full md:w-1/3 flex justify-center">
-            <img src={avatar} class="w-64 h-auto object-cover rounded-md shadow" />
-          </div>
-
-          <div class="w-full md:w-2/3 text-gray-700">
-            <h3 class="text-xl font-bold text-gray-800 mb-1">
-              Filipino Gomez
-            </h3>
-            <p class="text-sm text-gray-500 mb-4">
-              Web Developer, Google
-            </p>
-            <p class="leading-relaxed line-clamp-4 max-w-[550px]">
-              "Who are in extremely love with eco friendly system. Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-              ex ea commodo consequat."
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row items-center gap-8">
-          <div class="w-full md:w-1/3 flex justify-center">
-            <img src={avatar} class="w-64 h-auto object-cover rounded-md shadow" />
-          </div>
-
-          <div class="w-full md:w-2/3 text-gray-700">
-            <h3 class="text-xl font-bold text-gray-800 mb-1">
-              Filipino Gomez
-            </h3>
-            <p class="text-sm text-gray-500 mb-4">
-              Web Developer, Google
-            </p>
-            <p class="leading-relaxed line-clamp-4 max-w-[550px]">
-              "Who are in extremely love with eco friendly system. Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-              ex ea commodo consequat."
-            </p>
-          </div>
+    <section className="py-16 bg-gradient-to-b bg-[#f9f9ff] to-gray-200">
+      <div className="container mx-auto px-6">
+        <h2 className="text-center text-3xl font-serif text-gray-800 mb-12">What our clients say</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {testimonials.map((data) => (
+            <div key={data.id} className="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:-translate-y-1 hover:shadow-xl">
+              <div className="flex items-center space-x-4">
+                <img src={data.img} alt={data.name} className="w-16 h-16 object-cover rounded-full border-2" />
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800">{data.name}</h3>
+                  <p className="text-sm text-gray-900">{data.position}</p>
+                </div>
+              </div>
+              <p className="mt-4 text-gray-700 italic leading-relaxed">"{data.text}"</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default TestimonialSec
- 
+export default TestimonialSec;
