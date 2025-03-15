@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-function Navbar() {
+function NavBar() {
   const [open, setOpen] = useState(false);
 
   const toggleMenu = () => setOpen(!open);
@@ -64,4 +64,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavBar;

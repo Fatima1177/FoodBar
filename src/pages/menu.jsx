@@ -1,13 +1,13 @@
 import React from 'react'
 import MenuSec from '../components/MenuSec'
-import Navbar from '../components/navBar'
+import NavBar from '../components/NavBar'
 import Form from '../components/Form'
 import Footer from '../components/Footer'
 
 const MenuPage = () => {
   return (
     <>
-    <Navbar/>
+    <NavBar/>
     <MenuSec/>
     <Form/>
     <Footer/>
