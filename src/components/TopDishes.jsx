@@ -12,7 +12,7 @@ const TopDishes = () => {
             <div className="grid gap-8 md:grid-cols-3 mb-10">
       
             <div className="group relative p-3 text-center border border-transparent transform transition-all duration-300 hover:border hover:scale-105">
-                <img src={d1} className="mx-auto mb-4 w-[500px] h-auto object-contain" />
+                <img src={d1} alt="" className="mx-auto mb-4 w-[500px] h-auto object-contain" />
                 <h3 className="text-xl font-serif mb-1 group-hover:text-red-500 transition-colors p-4 duration-300">Bread Fruit Cheese Sandwich</h3>
                 <p className="text-[#777777] mb-1">Bread/Potato/Cheese</p>
                 <p className="text-[#222222] font-bold group-hover:text-red-500 transition-colors duration-300">$5.99</p>
@@ -20,14 +20,14 @@ const TopDishes = () => {
 
 
             <div className="group relative p-3 text-center border border-transparent transform transition-all duration-300 hover:border hover:scale-105">
-                <img src={d2} className="mx-auto mb-4 w-[500px] h-auto object-contain"/>
+                <img src={d2} alt="" className="mx-auto mb-4 w-[500px] h-auto object-contain"/>
                 <h3 className="text-xl font-serif mb-1 group-hover:text-red-500 transition-colors p-4 duration-300">Beef Cutlet With Spring Onion</h3>
                 <p className="text-[#777777] mb-1">Bread/Potato/Cheese</p>
                 <p className="text-[#222222] font-bold group-hover:text-red-500 transition-colors duration-300">$5.99</p>
             </div>
 
             <div className="group relative p-3 text-center border border-transparent transform transition-all duration-300 hover:border hover:scale-105">
-                <img src={d3} className="mx-auto mb-4 w-[500px] h-auto object-contain"/>
+                <img src={d3} alt="" className="mx-auto mb-4 w-[500px] h-auto object-contain"/>
                 <h3 className="text-xl font-serif mb-1 group-hover:text-red-500 transition-colors p-4 duration-300">Meat With Sauce & Vegetables</h3>
                 <p className="text-[#777777] mb-1">Bread/Potato/Cheese</p>
                 <p className="text-[#222222] font-bold group-hover:text-red-500 transition-colors duration-300">$5.99</p>

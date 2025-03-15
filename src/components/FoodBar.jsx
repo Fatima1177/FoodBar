@@ -18,36 +18,36 @@ const FoodBar = () => {
 
             <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="aspect-w-16 aspect-h-9 relative overflow-hidden bg-cover bg-no-repeat">
-                    <img src={g1} className="w-full h-full object-cover transition duration-300 ease-in-out hover:scale-110"/>
+                    <img alt="" src={g1} className="w-full h-full object-cover transition duration-300 ease-in-out hover:scale-110"/>
                 </div>
 
                 <div className="aspect-w-16 aspect-h-9 relative overflow-hidden bg-cover bg-no-repeat">
-                    <img src={g2} className="w-full h-full object-cover transition duration-300 ease-in-out hover:scale-110"/>
+                    <img src={g2} alt="" className="w-full h-full object-cover transition duration-300 ease-in-out hover:scale-110"/>
                 </div>
             </div>
 
 
             <div className="grid grid-cols-3 gap-4 mb-4">
                 <div className="aspect-w-16 aspect-h-9 relative overflow-hidden bg-cover bg-no-repeat">
-                    <img src={g3} className="w-full h-full object-cover transition duration-300 ease-in-out hover:scale-110"/>
+                    <img src={g3} alt="" className="w-full h-full object-cover transition duration-300 ease-in-out hover:scale-110"/>
                 </div>
 
                 <div className="aspect-w-16 aspect-h-9 relative overflow-hidden bg-cover bg-no-repeat">
-                    <img src={g4} className="w-full h-full object-cover transition duration-300 ease-in-out hover:scale-110"/>
+                    <img src={g4} alt="" className="w-full h-full object-cover transition duration-300 ease-in-out hover:scale-110"/>
                 </div>
 
                 <div className="aspect-w-16 aspect-h-9 relative overflow-hidden bg-cover bg-no-repeat">
-                    <img src={g5} className="w-full h-full object-cover transition duration-300 ease-in-out hover:scale-110"/>
+                    <img src={g5} alt="" className="w-full h-full object-cover transition duration-300 ease-in-out hover:scale-110"/>
                 </div>
             </div>
 
 
             <div className="grid grid-cols-2 gap-4 ">
                 <div className="aspect-w-16 aspect-h-9 relative overflow-hidden bg-cover bg-no-repeat">
-                    <img src={g6} className="w-full h-full object-cover transition duration-300 ease-in-out hover:scale-110"/>
+                    <img src={g6}alt="" className="w-full h-full object-cover transition duration-300 ease-in-out hover:scale-110"/>
                 </div>
                 <div className="aspect-w-16 aspect-h-9 relative overflow-hidden bg-cover bg-no-repeat">
-                    <img src={g7} className="w-full h-full object-cover transition duration-300 ease-in-out hover:scale-110"/>
+                    <img src={g7} alt="" className="w-full h-full object-cover transition duration-300 ease-in-out hover:scale-110"/>
                 </div>
             </div>
 

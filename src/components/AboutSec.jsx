@@ -20,7 +20,7 @@ function AboutSection() {
           <button className="bg-red-500 text-white px-6 py-2 rounded-md hover:bg-red-600 transition-colors duration-200">View Full Menu</button>
         </div>
         <div className="flex justify-center">
-          <img src={aboutsec} className="rounded shadow w-full md:max-w-md h-auto"/>
+          <img src={aboutsec} alt="" className="rounded shadow w-full md:max-w-md h-auto"/>
         </div>
       </div>
     </section>

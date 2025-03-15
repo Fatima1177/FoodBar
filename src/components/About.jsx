@@ -12,7 +12,7 @@ return (
       </div>
 
       <div className="w-full md:w-1/2 relative flex items-center justify-center p-8 md:p-12">
-        <img src={about} className="w-64 h-auto relative z-10"/>
+        <img src={about} alt="" className="w-64 h-auto relative z-10"/>
       </div>
     </div>
   </section>

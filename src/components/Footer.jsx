@@ -64,6 +64,7 @@ const Footer = () => {
         <a href="#" className="hover:text-white"><i className="fa fa-behance"></i></a>
       </div>
     </div>
+
   </div>
 </footer>
 )
