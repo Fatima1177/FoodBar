@@ -9,7 +9,7 @@ import Form from '../components/Form'
 import Footer from '../components/Footer'
 const HomePage = () => {
   return (
-    <div>
+    <>
       <NavBar />
       <About/>
       <TopDishes/>
@@ -18,7 +18,7 @@ const HomePage = () => {
       <TestimonialSec/>
       <Form/>
       <Footer/>
-    </div>
+    </>
   )
 }
 
